@@ -17,6 +17,10 @@ module.exports = app => {
       type: String,
       required: true,
     },
+    role: {
+      type: String,
+      enum: ['admin'],
+    },
     createTime: {
       type: Date,
       default: Date.now,
