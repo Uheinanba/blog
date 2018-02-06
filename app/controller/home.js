@@ -2,10 +2,10 @@
 
 const Controller = require('egg').Controller;
 
-class HomeController extends Controller {
+class Home extends Controller {
   async index() {
     this.ctx.body = this.service.user.getById();
   }
 }
 
-module.exports = HomeController;
+module.exports = Home;

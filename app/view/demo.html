@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <label>
+      name:
+      <input class="name">
+    </label>
+    <label>
+      password:
+      <input class="password">
+    </label>
+    <button class="j-comfirm">确定</button>
+    <p>{{name}}</p>
+  </div>
+</body>
+<script src="/public/lib/jquery.js"></script>
+
+<script>
+  $(function(){
+    $('.j-comfirm').on('click', function() {
+      $.ajax({
+        type: "POST",
+        url: "/blog/auth/user/login",
+        data: {
+          "name": $('.name').val(),
+          "password": $('.password').val(),
+        },
+      }).done((res) => {
+        console.log(res);
+      })
+    })
+  });
+</script>
+</html>

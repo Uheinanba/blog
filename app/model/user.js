@@ -7,7 +7,7 @@ module.exports = app => {
     email: {
       type: String,
       unique: true,
-      required: true,
+      required: false,
     },
     password: {
       type: String,
@@ -15,7 +15,11 @@ module.exports = app => {
     },
     name: {
       type: String,
+      unique: true,
       required: true,
+    },
+    tel: {
+      type: Number,
     },
     role: {
       type: String,

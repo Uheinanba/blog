@@ -1,13 +1,19 @@
+'use strict';
+
 const Controller = require('egg').Controller;
 
 class Abstract extends Controller {
-  success(data) {
+  success(data = null) {
     this.ctx.status = 200;
-    this.ctx.body = data;
+    this.ctx.body = {
+      errCode: 0,
+      errMsg: '成功',
+      data,
+    };
   }
 
   error(data, code = 403) {
-    if (typeof data == 'string') {
+    if (typeof data === 'string') {
       this.ctx.throw(code, data);
     } else {
       this.ctx.throw(data.code, data.msg);
@@ -18,3 +24,5 @@ class Abstract extends Controller {
     this.ctx.throw(404, msg);
   }
 }
+
+module.exports = Abstract;
