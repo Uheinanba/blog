@@ -16,7 +16,12 @@
       password:
       <input class="password">
     </label>
-    <button class="j-comfirm">确定</button>
+    <label>
+      email:
+      <input class="email">
+    </label>
+    <button class="j-login">登录</button>
+    <button class="j-register">注册</button>
     <p>{{name}}</p>
   </div>
 </body>
@@ -24,7 +29,7 @@
 
 <script>
   $(function(){
-    $('.j-comfirm').on('click', function() {
+    $('.j-login').on('click', function() {
       $.ajax({
         type: "POST",
         url: "/blog/auth/user/login",
@@ -35,7 +40,21 @@
       }).done((res) => {
         console.log(res);
       })
-    })
+    });
+
+    $('.j-register').on('click', function() {
+      $.ajax({
+        type: "POST",
+        url: "/blog/auth/user/register",
+        data: {
+          "name": $('.name').val(),
+          "password": $('.password').val(),
+          "email": $('.email').val(),
+        },
+      }).done((res) => {
+        console.log(res);
+      })
+    });
   });
 </script>
 </html>
