@@ -1,0 +1,27 @@
+{
+    "editor.tabSize": 2,
+    "[javascript]": {
+      "editor.formatOnSave": true,
+      "editor.formatOnPaste": false
+    },
+    "[javascriptreact]": {
+      "editor.formatOnSave": true,
+      "editor.formatOnPaste": false
+    },
+    "[typescript]": {
+      "editor.formatOnSave": true,
+      "editor.formatOnPaste": false
+    },
+    "[typescriptreact]": {
+      "editor.formatOnSave": true,
+      "editor.formatOnPaste": false
+    },
+    "[html]": {
+      "editor.formatOnSave": false
+    },
+    "[vue]": {
+        "editor.formatOnSave": true
+    },
+    "vetur.validation.template": false
+  }
+  
