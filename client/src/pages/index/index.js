@@ -1,18 +1,16 @@
 import React from 'react';
 import dynamic from 'dva/dynamic';
 import { connect } from 'dva';
-import Main from '../components/Main';
-import styles from './IndexPage.css';
+import Main from './components/Main';
 
-function IndexPage({ dispatch, main }) {
-  console.log(main);
+/* function IndexPage({ dispatch, main }) {
   const fetchArticle = () => {
     return dispatch({
       type: 'main/fetch',
     });
   };
   return (
-    <div className={styles.normal}>
+    <div>
       <Main fetchArticle={fetchArticle} />
     </div>
   );
@@ -23,13 +21,11 @@ IndexPage.propTypes = {};
 const mapStateToProps = (state, ownProps) => ({
   main: state.main,
 });
-
-// export default connect(mapStateToProps)(IndexPage);
-
+ */
 const Users = app =>
   dynamic({
     app,
-    models: () => [import('../models/main')],
-    component: () => connect(mapStateToProps)(IndexPage),
+    models: () => [import('./models/home')],
+    component: () => Main,
   });
 export default Users;
